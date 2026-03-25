@@ -1,0 +1,30 @@
+public class enc {
+    public static void main(String[] args) {
+
+int[] arr={13,24,56,78,90};
+int target=13;
+int result=binarysearch(arr,target);
+if(result != -1){
+System.out.println("elment found at index"+result);
+}
+else{
+    System.out.println("element out of index");
+}
+    }
+static int binarysearch(int[] arr,int target){
+    int start=0;
+    int last=arr.length-1;
+    while(start<=last){
+        int mid=start+(last-start)/2;
+    if(arr[mid]==target){
+        return mid;}
+        else if(arr[mid]<target){
+            start=mid+1;
+        }
+        else{
+            last=mid-1;
+        }
+    }
+      return -1;
+}
+    }
